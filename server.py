@@ -1,10 +1,9 @@
 import BaseHTTPServer
 import os
 
-
 class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/":
+        if self.path != "/alauda.jpg":
             message_parts = [
                 "<html>",
                 "<head><title>Hello World</title></head>",
@@ -15,7 +14,6 @@ class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                 "<html>"
             ]
             message = '\r\n'.join(message_parts)
-
             # message = "New request arrived from %s:%d" % self.client_address
             self.send_response(200)
             self.end_headers()
@@ -27,6 +25,7 @@ class WebRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(f.read())
             f.close()
+
 
 if __name__ == '__main__':
     print "Server started, Listening on port 80"
