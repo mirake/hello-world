@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/python  /app/server.py
+/usr/local/bin/python  /app/server.py
