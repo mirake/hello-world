@@ -1,10 +1,8 @@
-FROM ubuntu:trusty
-MAINTAINER ruicao ruicao@mathildetech.com
+FROM python:3.12-slim-bookworm
 
-RUN apt-get update && \
-    apt-get install -y python-pip
+MAINTAINER ruicao ruicao@alauda.io
 
-RUN pip install flake8 
+RUN apt-get update
 
 WORKDIR /app
 
