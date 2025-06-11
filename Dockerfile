@@ -4,6 +4,8 @@ MAINTAINER ruicao ruicao@alauda.io
 
 RUN apt-get update
 
+RUN apt-get install -y curl wget
+
 WORKDIR /app
 
 EXPOSE 80
